@@ -30,7 +30,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapGet("/", (BearerTokenGenerator bearerTokenGenerator)
-    => new { Info = "Use 'Tests.http' file generate requests for login and token-authorization." });
+    => new { Info = "Use 'Tests.http' file to generate requests for login and token-authorization." });
 
 app.MapPost("/login", ([FromBody] LoginRequest request, BearerTokenGenerator bearerTokenGenerator)
     => new // password not checked for brevity
