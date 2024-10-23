@@ -1,0 +1,21 @@
+@HostAddress = http://localhost:5115
+
+### 1. login to get the token
+POST {{HostAddress}}/login/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "user123",
+  "password": "pwd456",
+  "email": "test@test.com"
+}
+
+### 2. Replace the following token with the
+###    token from the login-response above
+
+GET {{HostAddress}}/check-bearer-token/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4ODAwZjE0Zi1hZmM1LTQ4MjUtODgxYy00MmQ2ZWZhMzExOTUiLCJzdWIiOiJ1c2VyMTIzIiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwibmJmIjoxNzI5NzA2NzYyLCJleHAiOjE3Mjk3MDY3OTIsImlhdCI6MTcyOTcwNjc2Mn0.KBf0dUhEzFyGpxuf_NgcoJKCjaWm2lzerYKESBgkx7g
+
+###
